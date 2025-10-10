@@ -49,6 +49,7 @@ function LoginCard({error, loading, handleLogin}) {
                     )}
 
                     <Button
+                        color="primary"
                         variant="contained"
                         size="large"
                         fullWidth
@@ -64,7 +65,7 @@ function LoginCard({error, loading, handleLogin}) {
 
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
                         <SecurityIcon fontSize="small" color="action" />
-                        <Typography variant="caption" color="text.secondary">
+                        <Typography variant="caption" color='secondary.main'>
                             Secure authentication via Microsoft Entra ID
                         </Typography>
                     </Box>

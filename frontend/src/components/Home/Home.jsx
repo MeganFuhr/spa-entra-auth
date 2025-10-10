@@ -1,8 +1,5 @@
 import {
-  AppBar,
-  Toolbar,
   Typography,
-  Button,
   Container,
   Box,
   Card,
@@ -10,7 +7,6 @@ import {
   Avatar,
   Alert,
   AlertTitle,
-  Chip,
   Divider,
   List,
   ListItem,
@@ -19,13 +15,12 @@ import {
 } from '@mui/material';
 import {
   CheckCircle as CheckCircleIcon,
-  Logout as LogoutIcon,
   Person as PersonIcon,
   Email as EmailIcon,
-  Groups as GroupsIcon,
-  Security as SecurityIcon,
   Info as InfoIcon,
 } from '@mui/icons-material';
+
+import NavBar from '../NavBar/NavBar';
 
 function Home({ user, handleLogout }) {
     // Debug: Log the user object to see its structure
@@ -34,25 +29,7 @@ function Home({ user, handleLogout }) {
     
     return (
         <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
-            {/* Header */}
-            <AppBar position="static" elevation={1}>
-                <Toolbar>
-                    <Avatar sx={{ bgcolor: 'secondary.main', mr: 2 }}>
-                        <SecurityIcon />
-                    </Avatar>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Secure Application
-                    </Typography>
-                    <Button
-                        color="inherit"
-                        onClick={handleLogout}
-                        startIcon={<LogoutIcon />}
-                    >
-                        Sign Out
-                    </Button>
-                </Toolbar>
-            </AppBar>
-
+            <NavBar />
             {/* Main Content */}
             <Container maxWidth="lg" sx={{ py: 4 }}>
                 {/* Success Message */}
@@ -110,7 +87,6 @@ function Home({ user, handleLogout }) {
                                 <ListItemText
                                     primary="Full Name"
                                     secondary={user.response?.account?.name || 'Not available'}
-                                    primaryTypographyProps={{ fontWeight: 'medium' }}
                                 />
                             </ListItem>
 
@@ -121,7 +97,6 @@ function Home({ user, handleLogout }) {
                                 <ListItemText
                                     primary="Email Address"
                                     secondary={user.response?.account?.username || 'Not available'}
-                                    primaryTypographyProps={{ fontWeight: 'medium' }}
                                 />
                             </ListItem>
                         </List>

@@ -104,7 +104,6 @@ const AuthProvider = ({ children }) => {
         // console.log("Login response:", JSON.stringify(response));
         try {
             if (response) {
-                // const userData = await response.json();
                 setUser({ ...user, response });
                 setIsAuthorized(true); // Backend should return `isAuthorized`
             } else if (response.status === 403) {
@@ -132,9 +131,9 @@ const AuthProvider = ({ children }) => {
 
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, isAuthorized, user, loading, error, handleLogin, handleLogout }}>
+        <AuthContext value={{ isAuthenticated, isAuthorized, user, loading, error, handleLogin, handleLogout }}>
             {children}
-        </AuthContext.Provider>
+        </AuthContext>
     )
 }
 
