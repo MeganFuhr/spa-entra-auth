@@ -1,16 +1,73 @@
-# React + Vite
+# SPA Entra Auth
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React-based single-page application (SPA) that uses Microsoft Authentication Library (MSAL) to integrate with Microsoft Entra ID for secure authentication and authorization.
 
-Currently, two official plugins are available:
+## Folder Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+frontend/
+├── public/                 # Static assets
+│   └── vite.svg
+├── src/                    # Source code
+│   ├── assets/             # Images and other assets
+│   │   └── react.svg
+│   ├── components/         # React components
+│   │   ├── auth/           # Authentication logic
+│   │   │   └── authConfig.js
+│   │   ├── context/        # Context providers
+│   │   │   ├── authContext.jsx
+│   │   │   └── themeContext.jsx
+│   │   ├── Home/           # Home page components
+│   │   │   └── Home.jsx
+│   │   └── loginCard/      # Login card component
+│   │       └── loginCard.jsx
+│   ├── App.jsx             # Main app component
+│   ├── index.css           # Global styles
+│   └── main.jsx            # Entry point
+├── .env                    # Environment variables
+├── package.json            # Project dependencies and scripts
+└── vite.config.js          # Vite configuration
+```
 
-## React Compiler
+## Example .env File
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Create a `.env` file in the `frontend/` directory with the following content:
 
-## Expanding the ESLint configuration
+```
+VITE_AZURE_CLIENT_ID=your-client-id
+VITE_AZURE_TENANT_ID=your-tenant-id
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Replace `your-client-id` and `your-tenant-id` with your Azure App Registration details.
+
+## How to Start the App
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open your browser and navigate to:
+   ```
+   http://localhost:5173
+   ```
+
+## MSAL Documentation
+
+For more information on using MSAL, refer to the [official MSAL documentation](https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-overview).
+
+## Features
+
+- Secure authentication via Microsoft Entra ID
+- Light and dark mode toggle
+- Persistent login state using MSAL
+- Responsive design with Material-UI
+
+## License
+
+This project is licensed under the MIT License.
