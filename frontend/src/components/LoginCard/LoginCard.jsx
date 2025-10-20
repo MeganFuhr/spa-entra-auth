@@ -14,8 +14,6 @@ import {
     Lock as LockIcon,
     Security as SecurityIcon,
 } from '@mui/icons-material';
-import { useContext } from 'react';
-import { ThemeContext } from '../context/themeContext';
 
 function LoginCard({error, loading, handleLogin}) {
 
