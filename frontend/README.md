@@ -59,7 +59,7 @@ Replace `your-client-id` and `your-tenant-id` with your Azure App Registration d
 
 ## MSAL Documentation
 
-For more information on using MSAL, refer to the [official MSAL documentation](https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-overview).
+For more information on using MSAL, refer to the [official MSAL documentation](https://learn.microsoft.com/en-us/entra/identity-platform/msal-overview).
 
 ## Features
 
