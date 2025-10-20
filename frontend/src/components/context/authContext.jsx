@@ -1,18 +1,20 @@
 
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, cache } from "react";
 import { LogLevel, PublicClientApplication } from "@azure/msal-browser";
 
 export const AuthContext = createContext(null)
-
+// https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md
 const msalConfig = {
     auth: {
         clientId: import.meta.env.VITE_AZURE_CLIENT_ID, // Replace with your Azure App Registration Client ID
         authority: `https://login.microsoftonline.com/${import.meta.env.VITE_AZURE_TENANT_ID}`, // Replace with your Tenant ID
         redirectUri: window.location.origin,
+        postLogoutRedirectUri : window.location.href
     },
     cache: {
-        cacheLocation: "sessionStorage",
-        storeAuthStateInCookie: false,
+        cacheLocation: "sessionStorage", // This configures where your cache will be stored
+        storeAuthStateInCookie: true,
+        secureCookies: true
     },
     system: {
         loggerOptions: {
