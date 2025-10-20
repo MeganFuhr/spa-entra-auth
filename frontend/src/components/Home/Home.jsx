@@ -24,8 +24,8 @@ import NavBar from '../NavBar/NavBar';
 
 function Home({ user, handleLogout }) {
     // Debug: Log the user object to see its structure
-    console.log('User object:', user);
-    console.log('User Response Account Name:', user.response.account.name);
+    // console.log('User object:', user);
+    // console.log('User Response Account Name:', user.response.account.name);
     
     return (
         <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>

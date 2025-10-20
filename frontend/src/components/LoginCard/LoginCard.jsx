@@ -14,8 +14,11 @@ import {
     Lock as LockIcon,
     Security as SecurityIcon,
 } from '@mui/icons-material';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/themeContext';
 
 function LoginCard({error, loading, handleLogin}) {
+
     return (
         <Box
             sx={{
@@ -65,8 +68,9 @@ function LoginCard({error, loading, handleLogin}) {
 
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
                         <SecurityIcon fontSize="small" color="action" />
-                        <Typography variant="caption" color='secondary.main'>
+                        <Typography variant="caption" color="text.primary">
                             Secure authentication via Microsoft Entra ID
+                            
                         </Typography>
                     </Box>
                 </CardContent>
